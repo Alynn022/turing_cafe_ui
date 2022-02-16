@@ -1,4 +1,6 @@
 .single-reservation {
   border: teal 4px solid;
   background-color: white;
+  width: 100%;
+  color: teal;
 }

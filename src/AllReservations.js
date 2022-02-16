@@ -1,5 +1,5 @@
 import React from 'react';
-import './AllReservations';
+import './AllReservations.css';
 import SingleReservation from './SingleReservation';
 
 const AllReservations = ({ reservations }) => {
@@ -12,7 +12,7 @@ const AllReservations = ({ reservations }) => {
     )
   })
   return (
-    <section className='reservation-card'>
+    <section className='all-reservations'>
       {reservationsData}
     </section>
   )
