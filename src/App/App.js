@@ -8,13 +8,20 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      reservations: []
+      reservations: [],
+      isUpdated: false
     }
   }
   componentDidMount() {
     apiCalls.getData('reservations') 
-      .then(data => {this.setState({reservations: data })
+      .then(data => {
+        this.setState({reservations: data, isUpdated: true })
     })
+    .catch(() => "sorry something went wrong")
+  }
+  
+  addReservation(newReservation) {
+    this.setState ({ reservations: [...this.state.reservations, newReservation], isUpdated: true })
   }
 
   render() {
@@ -22,11 +29,10 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-
+          <Form addReservation={this.addReservation} />
         </div>
         <div className='resy-container'>
-          <Form />
-          <AllReservations reservations={this.state.reservations} />
+          {this.state.isUpdated === true && <AllReservations reservations={this.state.reservations} />}
         </div>
       </div>
     )

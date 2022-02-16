@@ -6,10 +6,10 @@ const AllReservations = ({ reservations }) => {
   const reservationsData = reservations.map(reservation => {
     return (
       <SingleReservation
-        id={reservation.id} name={reservation.name} date={reservation.date}
-        time={reservation.time} number={reservation.number}
+      id={reservation.id} name={reservation.name} date={reservation.date}
+      time={reservation.time} number={reservation.number} key={reservation.id}
       />  
-    )
+      )
   })
   return (
     <section className='all-reservations'>
