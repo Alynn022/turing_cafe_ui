@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import apiCalls from '../apiCalls';
 import './App.css';
 import AllReservations from '../AllReservations';
+import Form from '../Form'
 
 class App extends Component {
   constructor() {
@@ -24,6 +25,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
+          <Form />
           <AllReservations reservations={this.state.reservations} />
         </div>
       </div>
